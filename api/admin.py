@@ -6,10 +6,12 @@ from api.models import Company, Employee
 
 class CompanyAdmin(admin.ModelAdmin):
     list_display = ('name', 'location', 'type')
+    search_fields = ('name',)
 
 
 class EmployeeAdmin(admin.ModelAdmin):
     list_display = ('name', 'address', 'company')
+    search_fields = ('name',)
 
 
 admin.site.register(Company, CompanyAdmin)
