@@ -1,7 +1,7 @@
 from django.db import models
 
-# Create your models here.
 
+# Create your models here.
 
 # creating company model
 class Company(models.Model):
@@ -19,11 +19,10 @@ class Company(models.Model):
     active = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.name
+        return self.name + self.location
+
 
 # Employee Model
-
-
 class Employee(models.Model):
     name = models.CharField(max_length=100)
     email = models.CharField(max_length=50)
