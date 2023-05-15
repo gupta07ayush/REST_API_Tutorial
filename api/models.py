@@ -19,3 +19,17 @@ class Company(models.Model):
     active = models.BooleanField(default=True)
 
 # Employee Model
+
+
+class Employee(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.CharField(max_length=50)
+    address = models.CharField(max_length=200)
+    phone = models.CharField(max_length=10)
+    about = models.TextField()
+    company = models.ForeignKey(Company, on_delete=models.CASCADE)
+    position = models.CharField(max_length=50, choices=(
+        ('Manager', 'Manager'),
+        ('Software Developer', 'sd'),
+        ('Project Leader', 'pl')
+    ))
